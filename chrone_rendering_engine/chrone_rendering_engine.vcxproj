@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{4EA0543C-8062-470E-80DA-6B053E3BE788}</ProjectGuid>
+    <RootNamespace>chronerenderingengine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <OutDir>$(ProjectDir)\build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(ProjectDir)\intermediate\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <OutDir>$(ProjectDir)\build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(ProjectDir)\intermediate\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.lib</TargetExt>
+    <OutDir>$(ProjectDir)\build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(ProjectDir)\intermediate\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.lib</TargetExt>
+    <OutDir>$(ProjectDir)\build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(ProjectDir)\intermediate\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(VK_SDK_PATH)\Include;$(ProjectDir)\include;$(ProjectDir)\include\renderer\shader_reflection;$(SolutionDir)\..\chrone_core\include;;$(SolutionDir)\..\chrone_core\;$(SolutionDir)\..\chrone-memory\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>vulkan-1.lib; chrone_math.lib;chrone_memory.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VK_SDK_PATH)\Lib32</AdditionalLibraryDirectories>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\chrone-math\chrone_math\build\$(Configuration)\$(Platform);$(VK_SDK_PATH)\Lib32;$(SolutionDir)\..\chrone-memory\chrone_memory\build\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VK_SDK_PATH)\Lib32;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(VK_SDK_PATH)\Include;$(ProjectDir)\include;$(ProjectDir)\include\renderer\shader_reflection;$(SolutionDir)\..\chrone_core\include;;$(SolutionDir)\..\chrone_core\;$(SolutionDir)\..\chrone-memory\</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>vulkan-1.lib; chrone_math.lib;chrone_memory.lib;</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\chrone-math\chrone_math\build\$(Configuration)\$(Platform);$(VK_SDK_PATH)\Lib;$(SolutionDir)\..\chrone-memory\chrone_memory\build\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VK_SDK_PATH)\Lib;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(VK_SDK_PATH)\Include;$(ProjectDir)\include;$(ProjectDir)\include\renderer\shader_reflection;$(SolutionDir)\..\chrone_core\include;$(VK_SDK_PATH)\Include;$(ProjectDir)\include;$(SolutionDir)\..\chrone_core\;$(SolutionDir)\..\chrone-memory\</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VK_SDK_PATH)\Lib32;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>vulkan-1.lib; chrone_math.lib;chrone_memory.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\chrone-math\chrone_math\build\$(Configuration)\$(Platform);$(VK_SDK_PATH)\Lib32;$(SolutionDir)\..\chrone-memory\chrone_memory\build\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(VK_SDK_PATH)\Include;$(ProjectDir)\include;$(ProjectDir)\include\renderer\shader_reflection;$(SolutionDir)\..\chrone_core\include;;$(SolutionDir)\..\chrone_core\;$(SolutionDir)\..\chrone-memory\</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VK_SDK_PATH)\Lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>vulkan-1.lib; chrone_math.lib;chrone_memory.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\chrone-math\chrone_math\build\$(Configuration)\$(Platform);$(VK_SDK_PATH)\Lib;$(SolutionDir)\..\chrone-memory\chrone_memory\build\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\renderer\CommandBufferFunc.cpp" />
+    <ClCompile Include="src\renderer\CommandBufferInterface.cpp" />
+    <ClCompile Include="src\renderer\DeviceResourceTableFunction.cpp" />
+    <ClCompile Include="src\renderer\RendererResourceManager.cpp" />
+    <ClCompile Include="src\renderer\Renderer.cpp" />
+    <ClCompile Include="src\renderer\shader_reflection\ShaderPipelineReflectionBuilder.cpp" />
+    <ClCompile Include="src\renderer\shader_reflection\spirv_cfg.cpp" />
+    <ClCompile Include="src\renderer\shader_reflection\spirv_cross.cpp" />
+    <ClCompile Include="src\renderer\shader_reflection\spirv_glsl.cpp" />
+    <ClCompile Include="src\vulkan_backend\Device.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\renderer\CommandBufferFunc.h" />
+    <ClInclude Include="include\renderer\DeviceInstance.h" />
+    <ClInclude Include="include\renderer\DeviceResource.h" />
+    <ClInclude Include="include\renderer\DeviceResourceAllocationFunction.h" />
+    <ClInclude Include="include\renderer\DeviceResourceTable.h" />
+    <ClInclude Include="include\renderer\DeviceResourceTableFunction.h" />
+    <ClInclude Include="include\renderer\RenderCommand.h" />
+    <ClInclude Include="include\renderer\Renderer.h" />
+    <ClInclude Include="include\renderer\ResourceHandle.h" />
+    <ClInclude Include="include\renderer\Handle.h" />
+    <ClInclude Include="include\renderer\CommandBuffer.h" />
+    <ClInclude Include="include\renderer\shader_reflection\GLSL.std.450.h" />
+    <ClInclude Include="include\renderer\shader_reflection\ShaderPipelineReflectionBuilder.h" />
+    <ClInclude Include="include\renderer\shader_reflection\spirv.hpp" />
+    <ClInclude Include="include\renderer\shader_reflection\spirv_cfg.hpp" />
+    <ClInclude Include="include\renderer\shader_reflection\spirv_common.hpp" />
+    <ClInclude Include="include\renderer\shader_reflection\spirv_cross.hpp" />
+    <ClInclude Include="include\renderer\shader_reflection\spirv_glsl.hpp" />
+    <ClInclude Include="include\renderer\SparseObjectArrayFunction.h" />
+    <ClInclude Include="include\renderer\SparseObjectArray.h" />
+    <ClInclude Include="include\vulkan_backend\BackendType.h" />
+    <ClInclude Include="include\vulkan_backend\Device.h" />
+    <ClInclude Include="include\vulkan_backend\VulkanHelper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
